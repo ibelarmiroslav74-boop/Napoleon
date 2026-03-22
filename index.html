@@ -74,6 +74,15 @@
             backdrop-filter: blur(14px) saturate(140%);
             -webkit-backdrop-filter: blur(14px) saturate(140%);
             box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.65);
+            transition:
+                padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+        .navbar.nav-collapsed {
+            padding-top: 0.55rem;
+            padding-bottom: 0.55rem;
+            box-shadow: 0 12px 34px -18px rgba(0, 0, 0, 0.8);
         }
         .nav-container {
             max-width: 1300px;
@@ -98,6 +107,27 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
+            transform-origin: top center;
+            transition:
+                opacity 0.45s ease,
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                margin-top 0.45s ease,
+                filter 0.45s ease;
+            max-height: 120px;
+            opacity: 1;
+            transform: translateY(0) scaleY(1);
+            filter: blur(0);
+            overflow: hidden;
+        }
+        .navbar.nav-collapsed .nav-links {
+            opacity: 0;
+            transform: translateY(-18px) scaleY(0.82);
+            max-height: 0;
+            margin-top: -0.3rem;
+            pointer-events: none;
+            filter: blur(8px);
         }
         .nav-links a {
             color: #f0e5d8;
@@ -349,6 +379,8 @@
             html:focus-within {
                 scroll-behavior: auto;
             }
+            .navbar,
+            .nav-links,
             .page,
             .active-page,
             .reveal-item,
@@ -366,6 +398,9 @@
             .hero h1 { font-size: 2.8rem; }
             .nav-container { flex-direction: column; gap: 0.6rem; }
             .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .navbar.nav-collapsed .nav-links {
+                margin-top: -0.5rem;
+            }
         }
     </style>
 </head>
@@ -509,6 +544,7 @@
 </footer>
 
 <script>
+    const navbar = document.querySelector('.navbar');
     const pagesMap = {
         home: document.getElementById('home-page'),
         biography: document.getElementById('biography-page'),
@@ -534,6 +570,34 @@
         '.container > p',
         '.container > div[style*="display: flex"] > span'
     ];
+    let lastScrollY = window.scrollY;
+    let navCollapsed = false;
+    const scrollThreshold = 18;
+    const topRevealOffset = 110;
+
+    function setNavCollapsed(collapsed) {
+        if (navCollapsed === collapsed) {
+            return;
+        }
+
+        navCollapsed = collapsed;
+        navbar.classList.toggle('nav-collapsed', collapsed);
+    }
+
+    function handleNavOnScroll() {
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollY;
+
+        if (currentScrollY <= topRevealOffset) {
+            setNavCollapsed(false);
+        } else if (delta > scrollThreshold) {
+            setNavCollapsed(true);
+        } else if (delta < -scrollThreshold) {
+            setNavCollapsed(false);
+        }
+
+        lastScrollY = currentScrollY;
+    }
 
     function getRevealItems(page) {
         return Array.from(page.querySelectorAll(revealSelectors.join(', ')));
@@ -568,6 +632,7 @@
             if(val === pageId) link.classList.add('active-nav');
             else link.classList.remove('active-nav');
         });
+        setNavCollapsed(false);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
@@ -599,8 +664,10 @@
         else setActivePage('home');
     }
     prepareRevealItems();
+    window.addEventListener('scroll', handleNavOnScroll, { passive: true });
     window.addEventListener('hashchange', hashChange);
     hashChange();
+    handleNavOnScroll();
 </script>
 </body>
 </html>
