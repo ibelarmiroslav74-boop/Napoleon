@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Наполеон Бонапарт | Империя, Слава, Наследие</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://commons.wikimedia.org" crossorigin>
+    <link rel="preload" as="image" href="https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis_David_-_Bonaparte_franchissant_le_Grand-Saint-Bernard%2C_20_mai_1800_-_Google_Art_Project.jpg" fetchpriority="high">
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -219,9 +224,17 @@
             border-color: #dbb87a;
         }
         .card-img {
+            position: relative;
             height: 210px;
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #efe4d7, #d8c3a6);
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center;
         }
         .card-content {
             padding: 1.6rem;
@@ -340,6 +353,8 @@
             display: none;
             opacity: 0;
             transform: translateY(18px);
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 1200px;
         }
         .active-page {
             display: block;
@@ -437,9 +452,9 @@
                 <div class="stat-card"><div class="stat-number">40</div><div>стран приняли Кодекс</div></div>
             </div>
             <div class="grid-3">
-                <div class="card"><div class="card-img" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/La_Bataille_d%27Austerlitz%2C_le_2_d%C3%A9cembre_1805_%28Fran%C3%A7ois_G%C3%A9rard%29.jpg');"></div><div class="card-content"><h3>Стратег-новатор</h3><p>Корпусная система, массовая мобилизация, централизация артиллерии — его тактика изучается в академиях до сих пор.</p></div></div>
-                <div class="card"><div class="card-img" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis_David_-_The_Coronation_of_Napoleon_%281805-1807%29.jpg');"></div><div class="card-content"><h3>Государственный гений</h3><p>Банк Франции, светское образование, префекты департаментов — заложил основы современной Франции.</p></div></div>
-                <div class="card"><div class="card-img" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/1807_French_Empire.jpg');"></div><div class="card-content"><h3>Европейская трансформация</h3><p>От Испании до Польши — отмена крепостного права, введение гражданских свобод под влиянием Франции.</p></div></div>
+                <div class="card"><div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/La_Bataille_d%27Austerlitz%2C_le_2_d%C3%A9cembre_1805_%28Fran%C3%A7ois_G%C3%A9rard%29.jpg" alt="Битва при Аустерлице" loading="eager" decoding="async" fetchpriority="high"></div><div class="card-content"><h3>Стратег-новатор</h3><p>Корпусная система, массовая мобилизация, централизация артиллерии — его тактика изучается в академиях до сих пор.</p></div></div>
+                <div class="card"><div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis_David_-_The_Coronation_of_Napoleon_%281805-1807%29.jpg" alt="Коронация Наполеона" loading="lazy" decoding="async"></div><div class="card-content"><h3>Государственный гений</h3><p>Банк Франции, светское образование, префекты департаментов — заложил основы современной Франции.</p></div></div>
+                <div class="card"><div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/1807_French_Empire.jpg" alt="Карта Французской империи 1807 года" loading="lazy" decoding="async"></div><div class="card-content"><h3>Европейская трансформация</h3><p>От Испании до Польши — отмена крепостного права, введение гражданских свобод под влиянием Франции.</p></div></div>
             </div>
             <div class="info-block">
                 <h3><i class="fas fa-crown"></i> Почему Наполеон изменил мир?</h3>
@@ -477,9 +492,9 @@
         <div class="container">
             <h2>Шедевры военного искусства</h2>
             <div class="grid-3">
-                <div class="card"><div class="card-img" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/La_Bataille_d%27Austerlitz%2C_le_2_d%C3%A9cembre_1805_%28Fran%C3%A7ois_G%C3%A9rard%29.jpg');"></div><div class="card-content"><h3>Аустерлиц (1805)</h3><p>«Битва трёх императоров» — гениальная засада, разгром русско-австрийской армии. Франция стала гегемоном Европы.</p></div></div>
-                <div class="card"><div class="card-img" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Bataille-d%27Iena.jpg');"></div><div class="card-content"><h3>Йена–Ауэрштедт (1806)</h3><p>Молниеносный разгром Пруссии за один день. Вступление в Берлин, конец Священной Римской империи.</p></div></div>
-                <div class="card"><div class="card-img" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Bataille_de_Wagram%2C_6_juillet_1809%2C_Horace_Vernet.jpg');"></div><div class="card-content"><h3>Ваграм (1809)</h3><p>Кровавое сражение против Австрии, приведшее к браку Наполеона с Марией-Луизой и пику империи.</p></div></div>
+                <div class="card"><div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/La_Bataille_d%27Austerlitz%2C_le_2_d%C3%A9cembre_1805_%28Fran%C3%A7ois_G%C3%A9rard%29.jpg" alt="Картина битвы при Аустерлице" loading="lazy" decoding="async"></div><div class="card-content"><h3>Аустерлиц (1805)</h3><p>«Битва трёх императоров» — гениальная засада, разгром русско-австрийской армии. Франция стала гегемоном Европы.</p></div></div>
+                <div class="card"><div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bataille-d%27Iena.jpg" alt="Битва при Йене" loading="lazy" decoding="async"></div><div class="card-content"><h3>Йена–Ауэрштедт (1806)</h3><p>Молниеносный разгром Пруссии за один день. Вступление в Берлин, конец Священной Римской империи.</p></div></div>
+                <div class="card"><div class="card-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bataille_de_Wagram%2C_6_juillet_1809%2C_Horace_Vernet.jpg" alt="Битва при Ваграме" loading="lazy" decoding="async"></div><div class="card-content"><h3>Ваграм (1809)</h3><p>Кровавое сражение против Австрии, приведшее к браку Наполеона с Марией-Луизой и пику империи.</p></div></div>
             </div>
             <div class="info-block">
                 <h3><i class="fas fa-book-open"></i> Военные инновации и тактика</h3>
@@ -574,6 +589,22 @@
     let navCollapsed = false;
     const scrollThreshold = 18;
     const topRevealOffset = 110;
+    const imageObserver = 'IntersectionObserver' in window
+        ? new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                const img = entry.target;
+                const dataSrc = img.dataset.src;
+                if (dataSrc && img.src !== dataSrc) {
+                    img.src = dataSrc;
+                }
+                observer.unobserve(img);
+            });
+        }, { rootMargin: '240px 0px' })
+        : null;
 
     function setNavCollapsed(collapsed) {
         if (navCollapsed === collapsed) {
@@ -613,6 +644,47 @@
         });
     }
 
+    function prepareImages() {
+        const activeImages = new Set(pagesMap.home.querySelectorAll('img'));
+
+        Object.values(pagesMap).forEach(page => {
+            page.querySelectorAll('img').forEach(img => {
+                if (!img.dataset.src) {
+                    img.dataset.src = img.getAttribute('src');
+                }
+
+                const isActiveImage = activeImages.has(img);
+                if (isActiveImage) {
+                    img.loading = 'eager';
+                    return;
+                }
+
+                img.removeAttribute('src');
+                if (imageObserver) {
+                    imageObserver.observe(img);
+                } else {
+                    img.src = img.dataset.src;
+                }
+            });
+        });
+    }
+
+    function loadPageImages(pageId) {
+        const page = pagesMap[pageId];
+        if (!page) {
+            return;
+        }
+
+        page.querySelectorAll('img[data-src]').forEach(img => {
+            if (!img.getAttribute('src')) {
+                img.src = img.dataset.src;
+            }
+            if (imageObserver) {
+                imageObserver.unobserve(img);
+            }
+        });
+    }
+
     function animatePageContent(page) {
         const uniqueItems = [...new Set(getRevealItems(page))];
         uniqueItems.forEach(item => item.classList.remove('reveal-visible'));
@@ -624,6 +696,7 @@
     function setActivePage(pageId) {
         Object.values(pagesMap).forEach(p => p.classList.remove('active-page'));
         if(pagesMap[pageId]) {
+            loadPageImages(pageId);
             pagesMap[pageId].classList.add('active-page');
             animatePageContent(pagesMap[pageId]);
         }
@@ -664,6 +737,7 @@
         else setActivePage('home');
     }
     prepareRevealItems();
+    prepareImages();
     window.addEventListener('scroll', handleNavOnScroll, { passive: true });
     window.addEventListener('hashchange', hashChange);
     hashChange();
