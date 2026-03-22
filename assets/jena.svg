@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title>Йена-Ауэрштедт</title>
+  <desc>Декоративный постер с флагами и силуэтами кавалерии.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#20262e"/>
+      <stop offset="58%" stop-color="#42505b"/>
+      <stop offset="100%" stop-color="#c09b5a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <path d="M0 462 C175 392 314 492 439 430 S620 342 800 426 L800 600 L0 600 Z" fill="#141414" opacity="0.92"/>
+  <g stroke="#eadfc8" stroke-width="14" stroke-linecap="round">
+    <path d="M205 234 v155"/>
+    <path d="M382 201 v164"/>
+    <path d="M550 236 v152"/>
+  </g>
+  <g fill="#ba3030">
+    <path d="M205 234 h120 l-24 55 24 55 H205z"/>
+    <path d="M382 201 h130 l-26 60 26 60 H382z"/>
+    <path d="M550 236 h110 l-22 50 22 50 H550z"/>
+  </g>
+  <g fill="#f8edd9" font-family="Georgia, serif" text-anchor="middle">
+    <text x="400" y="110" font-size="58" font-weight="700">ЙЕНА-АУЭРШТЕДТ</text>
+    <text x="400" y="154" font-size="24" letter-spacing="4">1806 • МОЛНИЕНОСНАЯ ПОБЕДА</text>
+  </g>
+</svg>

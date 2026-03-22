@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title>Наполеон на коне</title>
+  <desc>Декоративная иллюстрация в тёплых тонах для главного баннера сайта.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b1410"/>
+      <stop offset="45%" stop-color="#5d3e24"/>
+      <stop offset="100%" stop-color="#c79f59"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6d38f" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#f6d38f" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1190" cy="220" r="170" fill="url(#sun)"/>
+  <path d="M0 675 C245 600 415 760 620 680 S1030 560 1600 690 L1600 900 L0 900 Z" fill="#2c211a" opacity="0.72"/>
+  <path d="M0 735 C250 660 430 810 720 720 S1110 600 1600 750 L1600 900 L0 900 Z" fill="#18110e" opacity="0.9"/>
+  <g transform="translate(565 240)">
+    <path d="M225 260 c25-48 86-90 161-83 67 7 120 45 143 95 29 64-10 135-92 150h-220c-79-8-113-78-87-162 17-53 57-104 95-121Z" fill="#f1e5cf" opacity="0.95"/>
+    <path d="M238 253 c-23 57-93 95-144 112l-52 17 33 53 74-17 36 80h56l-9-69 170 1 21 67h57l-10-79 83-36-20-51-69 22c-25-73-100-108-226-100Z" fill="#3c2d24"/>
+    <path d="M316 152 c18-35 83-62 132-49 51 13 81 54 83 96 2 36-14 63-42 79-41 24-108 26-146-1-54-38-59-89-27-125Z" fill="#d9b97d"/>
+    <path d="M286 118 c27-38 59-61 98-70 27-6 54-4 74 6 29 15 48 45 49 77-23-17-46-23-73-18-34 7-60 22-86 47l-62-42Z" fill="#111"/>
+    <path d="M452 126 c42 8 75 24 108 53l-26 31c-37-27-68-39-101-43l19-41Z" fill="#d8b06a"/>
+    <path d="M533 184 c44 21 78 60 91 109l72 56-30 41-61-41c-31 27-69 39-120 39l-10-49c43-1 76-11 95-28-6-36-28-64-60-84l23-43Z" fill="#b98943"/>
+  </g>
+  <g fill="#f8ecda" font-family="Georgia, 'Times New Roman', serif">
+    <text x="110" y="172" font-size="86" font-weight="700">NAPOLÉON</text>
+    <text x="114" y="245" font-size="33" letter-spacing="5">L’EMPIRE • LA STRATÉGIE • L’HÉRITAGE</text>
+  </g>
+  <rect x="110" y="286" width="190" height="4" fill="#c79f59"/>
+</svg>
