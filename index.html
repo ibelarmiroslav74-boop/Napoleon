@@ -65,13 +65,15 @@
 
         /* Navigation — имперский минимализм */
         .navbar {
-            background: #1e1915;
+            background: rgba(30, 25, 21, 0.78);
             padding: 0.7rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #c6a15b;
-            backdrop-filter: blur(2px);
+            border-bottom: 1px solid rgba(198, 161, 91, 0.65);
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
+            box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.65);
         }
         .nav-container {
             max-width: 1300px;
@@ -306,14 +308,57 @@
 
         .page {
             display: none;
-            animation: fadeSlide 0.45s ease-out;
+            opacity: 0;
+            transform: translateY(18px);
         }
         .active-page {
             display: block;
+            animation: pageReveal 0.7s ease-out forwards;
         }
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(12px);}
-            to { opacity: 1; transform: translateY(0);}
+        .reveal-item {
+            opacity: 0;
+            transform: translate3d(0, 34px, 0) scale(0.98);
+            filter: blur(14px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s ease;
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform, filter;
+        }
+        .reveal-item.reveal-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+            filter: blur(0);
+        }
+        .hero-content .reveal-item {
+            transform: translate3d(0, 42px, 0) scale(0.97);
+        }
+        .timeline-item.reveal-item:nth-child(odd) {
+            transform: translate3d(-34px, 34px, 0) scale(0.98);
+        }
+        .timeline-item.reveal-item:nth-child(even) {
+            transform: translate3d(34px, 34px, 0) scale(0.98);
+        }
+        .timeline-item.reveal-item.reveal-visible,
+        .hero-content .reveal-item.reveal-visible {
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+        @keyframes pageReveal {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto;
+            }
+            .page,
+            .active-page,
+            .reveal-item,
+            .reveal-item.reveal-visible {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
         }
 
         @media (max-width: 780px) {
@@ -472,10 +517,52 @@
         gallery: document.getElementById('gallery-page')
     };
     const navItems = document.querySelectorAll('.nav-link');
+    const revealSelectors = [
+        '.hero-content > *',
+        '.container > h2',
+        '.container > .timeline',
+        '.container > .info-block',
+        '.container > .quote-elegant',
+        '.container > .stat-grid',
+        '.container > .grid-3',
+        '.container > div[style*="background: #efe4d7"]',
+        '.stat-card',
+        '.card',
+        '.timeline-item',
+        '.info-block',
+        '.quote-elegant',
+        '.container > p',
+        '.container > div[style*="display: flex"] > span'
+    ];
+
+    function getRevealItems(page) {
+        return Array.from(page.querySelectorAll(revealSelectors.join(', ')));
+    }
+
+    function prepareRevealItems() {
+        Object.values(pagesMap).forEach(page => {
+            const uniqueItems = [...new Set(getRevealItems(page))];
+            uniqueItems.forEach((item, index) => {
+                item.classList.add('reveal-item');
+                item.style.setProperty('--reveal-delay', `${Math.min(index * 80, 720)}ms`);
+            });
+        });
+    }
+
+    function animatePageContent(page) {
+        const uniqueItems = [...new Set(getRevealItems(page))];
+        uniqueItems.forEach(item => item.classList.remove('reveal-visible'));
+        requestAnimationFrame(() => {
+            uniqueItems.forEach(item => item.classList.add('reveal-visible'));
+        });
+    }
     
     function setActivePage(pageId) {
         Object.values(pagesMap).forEach(p => p.classList.remove('active-page'));
-        if(pagesMap[pageId]) pagesMap[pageId].classList.add('active-page');
+        if(pagesMap[pageId]) {
+            pagesMap[pageId].classList.add('active-page');
+            animatePageContent(pagesMap[pageId]);
+        }
         navItems.forEach(link => {
             const val = link.getAttribute('data-page');
             if(val === pageId) link.classList.add('active-nav');
@@ -511,6 +598,7 @@
         if(hash && pagesMap[hash]) setActivePage(hash);
         else setActivePage('home');
     }
+    prepareRevealItems();
     window.addEventListener('hashchange', hashChange);
     hashChange();
 </script>
