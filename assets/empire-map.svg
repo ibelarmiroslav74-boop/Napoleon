@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title>Карта Французской империи</title>
+  <desc>Схематичная карта влияния Французской империи в Европе.</desc>
+  <rect width="800" height="600" fill="#efe5d4"/>
+  <path d="M160 180 C205 110 304 92 374 121 C444 151 462 121 512 143 C571 169 626 251 635 317 C645 389 603 442 524 463 C472 476 429 459 376 480 C307 509 203 481 160 430 C117 378 113 254 160 180 Z" fill="#c8a061" stroke="#8a6632" stroke-width="8"/>
+  <path d="M240 232 C273 203 332 193 370 219 C410 246 432 237 472 247 C524 259 562 315 547 358 C529 411 464 430 411 422 C364 416 346 437 289 425 C230 413 198 371 194 320 C191 282 206 258 240 232 Z" fill="#7c4d2d" opacity="0.72"/>
+  <g fill="#5b4128" font-family="Georgia, serif">
+    <text x="400" y="88" font-size="54" font-weight="700" text-anchor="middle">ИМПЕРИЯ 1807</text>
+    <text x="400" y="132" font-size="24" letter-spacing="3" text-anchor="middle">ЕВРОПА ПОД ВЛИЯНИЕМ ФРАНЦИИ</text>
+    <text x="286" y="305" font-size="26">Франция</text>
+    <text x="426" y="272" font-size="24">Рейнский союз</text>
+    <text x="360" y="392" font-size="22">Италия</text>
+  </g>
+</svg>

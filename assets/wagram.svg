@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title>Ваграм</title>
+  <desc>Декоративный постер со строем артиллерии и дымом сражения.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#433126"/>
+      <stop offset="45%" stop-color="#8a603f"/>
+      <stop offset="100%" stop-color="#d6b06c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <g fill="#f0e3ca" opacity="0.82">
+    <circle cx="220" cy="230" r="58"/>
+    <circle cx="285" cy="205" r="74"/>
+    <circle cx="360" cy="228" r="61"/>
+  </g>
+  <path d="M0 462 C120 421 236 487 354 447 S613 370 800 444 L800 600 L0 600 Z" fill="#2c2019" opacity="0.94"/>
+  <g fill="#16110f">
+    <rect x="170" y="395" width="82" height="34" rx="8"/>
+    <rect x="312" y="382" width="82" height="34" rx="8"/>
+    <rect x="458" y="402" width="82" height="34" rx="8"/>
+  </g>
+  <g stroke="#16110f" stroke-width="14" stroke-linecap="round">
+    <path d="M247 412 l80-42"/>
+    <path d="M389 399 l84-46"/>
+    <path d="M535 419 l82-36"/>
+  </g>
+  <g fill="#fff1da" font-family="Georgia, serif" text-anchor="middle">
+    <text x="400" y="112" font-size="60" font-weight="700">ВАГРАМ</text>
+    <text x="400" y="156" font-size="26" letter-spacing="4">1809 • АРТИЛЛЕРИЯ • ПИК ИМПЕРИИ</text>
+  </g>
+</svg>
