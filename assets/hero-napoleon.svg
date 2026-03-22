@@ -1,32 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title>Наполеон на коне</title>
-  <desc>Декоративная иллюстрация в тёплых тонах для главного баннера сайта.</desc>
+  <title>Наполеон на Альпийском перевале</title>
+  <desc>Широкая декоративная иллюстрация с Наполеоном на коне на фоне рассвета и гор.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#1b1410"/>
-      <stop offset="45%" stop-color="#5d3e24"/>
-      <stop offset="100%" stop-color="#c79f59"/>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#130f11"/>
+      <stop offset="38%" stop-color="#56402d"/>
+      <stop offset="72%" stop-color="#b27a45"/>
+      <stop offset="100%" stop-color="#efd4a2"/>
     </linearGradient>
-    <linearGradient id="sun" x1="0" x2="0" y1="0" y2="1">
-      <stop offset="0%" stop-color="#f6d38f" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#f6d38f" stop-opacity="0"/>
+    <radialGradient id="sun" cx="72%" cy="24%" r="34%">
+      <stop offset="0%" stop-color="#fff1cc" stop-opacity="0.96"/>
+      <stop offset="45%" stop-color="#f6d287" stop-opacity="0.62"/>
+      <stop offset="100%" stop-color="#f6d287" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coat" x1="0" x2="1">
+      <stop offset="0%" stop-color="#1d2531"/>
+      <stop offset="100%" stop-color="#34485f"/>
     </linearGradient>
   </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <circle cx="1190" cy="220" r="170" fill="url(#sun)"/>
-  <path d="M0 675 C245 600 415 760 620 680 S1030 560 1600 690 L1600 900 L0 900 Z" fill="#2c211a" opacity="0.72"/>
-  <path d="M0 735 C250 660 430 810 720 720 S1110 600 1600 750 L1600 900 L0 900 Z" fill="#18110e" opacity="0.9"/>
-  <g transform="translate(565 240)">
-    <path d="M225 260 c25-48 86-90 161-83 67 7 120 45 143 95 29 64-10 135-92 150h-220c-79-8-113-78-87-162 17-53 57-104 95-121Z" fill="#f1e5cf" opacity="0.95"/>
-    <path d="M238 253 c-23 57-93 95-144 112l-52 17 33 53 74-17 36 80h56l-9-69 170 1 21 67h57l-10-79 83-36-20-51-69 22c-25-73-100-108-226-100Z" fill="#3c2d24"/>
-    <path d="M316 152 c18-35 83-62 132-49 51 13 81 54 83 96 2 36-14 63-42 79-41 24-108 26-146-1-54-38-59-89-27-125Z" fill="#d9b97d"/>
-    <path d="M286 118 c27-38 59-61 98-70 27-6 54-4 74 6 29 15 48 45 49 77-23-17-46-23-73-18-34 7-60 22-86 47l-62-42Z" fill="#111"/>
-    <path d="M452 126 c42 8 75 24 108 53l-26 31c-37-27-68-39-101-43l19-41Z" fill="#d8b06a"/>
-    <path d="M533 184 c44 21 78 60 91 109l72 56-30 41-61-41c-31 27-69 39-120 39l-10-49c43-1 76-11 95-28-6-36-28-64-60-84l23-43Z" fill="#b98943"/>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#sun)"/>
+  <path d="M0 500C166 433 308 455 434 416c144-45 244-153 364-168 131-17 247 68 385 54 150-15 276-132 417-110V900H0Z" fill="#8a6340" opacity=".42"/>
+  <path d="M0 598c115-46 250-26 351-78 119-61 171-174 288-216 112-40 194 13 291-8 124-26 186-139 344-128 138 10 236 86 326 69V900H0Z" fill="#5b412e" opacity=".62"/>
+  <path d="M0 710c198-39 265-134 415-134 136 0 188 89 324 89 146 0 193-94 327-94 165 0 262 123 534 110V900H0Z" fill="#241a16"/>
+  <path d="M0 775c202-43 362 53 555-8 144-46 196-128 339-128 182 0 267 92 416 101 115 7 170-18 290-46V900H0Z" fill="#171012"/>
+  <g transform="translate(728 308)">
+    <path d="M351 237c53-4 98 17 133 56l94 36-17 41-78-26c-9 53-44 94-104 118l-23-41c52-24 74-54 66-90-9-42-45-73-88-83l17-11Z" fill="#3d2a1d"/>
+    <path d="M213 233c69-43 171-56 249-22 74 31 124 111 116 189-8 76-67 118-167 118H229c-103 0-165-48-170-128-6-85 41-146 154-157Z" fill="#e4d7c1" opacity=".95"/>
+    <path d="M210 251c-65 19-122 53-171 105l-39 66 62 15 53-46 79 70h62l-31-62 212 3 27 61h65l-22-85 117-58-18-45-115 41c-39-62-154-91-281-65Z" fill="#35251d"/>
+    <path d="M326 117c27-38 67-63 116-71 61-11 126 18 146 72 17 47-5 100-56 132-51 31-130 38-181 10-61-35-70-101-25-143Z" fill="#d8b57d"/>
+    <path d="M293 110c23-48 81-86 145-94 45-5 87 4 116 28 18 15 31 38 35 63-35-12-70-11-108 4-38 15-70 39-100 74l-88-75Z" fill="#111015"/>
+    <path d="M312 146c19-18 35-28 57-35 5 28 17 52 35 72-17 11-38 18-61 20-28 2-49-4-66-17 5-13 17-28 35-40Z" fill="#c79a53"/>
+    <path d="M446 184c49 5 109 29 149 75l-24 29c-54-31-97-45-145-49l20-55Z" fill="#cfaa64"/>
+    <path d="M410 200c-15 32-11 81 17 112 19 21 44 34 78 42l-16 43c-55-8-94-29-122-66-34-44-42-102-22-152l45 21Z" fill="url(#coat)"/>
+    <path d="M356 154c10-18 38-35 66-36 26 0 43 14 43 34 0 24-23 44-54 47-36 4-67-16-55-45Z" fill="#f3e3c6"/>
+    <circle cx="409" cy="153" r="7" fill="#2d1a17"/>
+    <path d="M326 185c21 26 48 39 85 39 31 0 57-10 82-33 13 22 16 43 8 63-16 41-95 55-147 28-52-28-69-71-28-97Z" fill="url(#coat)"/>
+    <path d="M242 141c44 17 83 17 116 0l24 39c-45 24-92 27-143 9l3-48Z" fill="#18202c"/>
+    <path d="M227 112c18-17 34-26 58-31-5 22-1 43 12 62-15 8-35 12-60 12-25 0-42-6-54-16 10-11 25-20 44-27Z" fill="#f0d79a"/>
   </g>
   <g fill="#f8ecda" font-family="Georgia, 'Times New Roman', serif">
-    <text x="110" y="172" font-size="86" font-weight="700">NAPOLÉON</text>
-    <text x="114" y="245" font-size="33" letter-spacing="5">L’EMPIRE • LA STRATÉGIE • L’HÉRITAGE</text>
+    <text x="112" y="178" font-size="90" font-weight="700">NAPOLÉON</text>
+    <text x="115" y="252" font-size="34" letter-spacing="5">CAMPAGNES • RÉFORMES • LÉGENDE</text>
   </g>
-  <rect x="110" y="286" width="190" height="4" fill="#c79f59"/>
+  <rect x="114" y="292" width="220" height="4" fill="#e4b86d"/>
 </svg>

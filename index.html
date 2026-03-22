@@ -224,16 +224,32 @@
         }
         .card-img {
             position: relative;
-            height: 210px;
+            min-height: 210px;
+            aspect-ratio: 4 / 3;
             overflow: hidden;
-            background: linear-gradient(135deg, #efe4d7, #d8c3a6);
+            background:
+                radial-gradient(circle at top, rgba(255, 245, 224, 0.92), transparent 52%),
+                linear-gradient(145deg, #f6eee3 0%, #e6d3ba 52%, #ceb089 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+        .card-img::after {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(116, 82, 39, 0.18);
+            border-radius: 18px;
+            pointer-events: none;
         }
         .card-img img {
             width: 100%;
             height: 100%;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
+            filter: drop-shadow(0 16px 20px rgba(43, 30, 17, 0.18));
         }
         .card-content {
             padding: 1.6rem;
@@ -415,6 +431,10 @@
             .navbar.nav-collapsed .nav-links {
                 margin-top: -0.5rem;
             }
+            .card-img {
+                min-height: 190px;
+                padding: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -451,9 +471,9 @@
                 <div class="stat-card"><div class="stat-number">40</div><div>стран приняли Кодекс</div></div>
             </div>
             <div class="grid-3">
-                <div class="card"><div class="card-img"><img src="assets/austerlitz.svg" alt="Битва при Аустерлице" loading="eager" decoding="async" fetchpriority="high"></div><div class="card-content"><h3>Стратег-новатор</h3><p>Корпусная система, массовая мобилизация, централизация артиллерии — его тактика изучается в академиях до сих пор.</p></div></div>
-                <div class="card"><div class="card-img"><img src="assets/coronation.svg" alt="Коронация Наполеона" loading="lazy" decoding="async"></div><div class="card-content"><h3>Государственный гений</h3><p>Банк Франции, светское образование, префекты департаментов — заложил основы современной Франции.</p></div></div>
-                <div class="card"><div class="card-img"><img src="assets/empire-map.svg" alt="Карта Французской империи 1807 года" loading="lazy" decoding="async"></div><div class="card-content"><h3>Европейская трансформация</h3><p>От Испании до Польши — отмена крепостного права, введение гражданских свобод под влиянием Франции.</p></div></div>
+                <div class="card"><div class="card-img"><img src="assets/austerlitz.svg" alt="Битва при Аустерлице" loading="eager" decoding="async" fetchpriority="high" width="800" height="600"></div><div class="card-content"><h3>Стратег-новатор</h3><p>Корпусная система, массовая мобилизация, централизация артиллерии — его тактика изучается в академиях до сих пор.</p></div></div>
+                <div class="card"><div class="card-img"><img src="assets/coronation.svg" alt="Коронация Наполеона" loading="lazy" decoding="async" width="800" height="600"></div><div class="card-content"><h3>Государственный гений</h3><p>Банк Франции, светское образование, префекты департаментов — заложил основы современной Франции.</p></div></div>
+                <div class="card"><div class="card-img"><img src="assets/empire-map.svg" alt="Карта Французской империи 1807 года" loading="lazy" decoding="async" width="800" height="600"></div><div class="card-content"><h3>Европейская трансформация</h3><p>От Испании до Польши — отмена крепостного права, введение гражданских свобод под влиянием Франции.</p></div></div>
             </div>
             <div class="info-block">
                 <h3><i class="fas fa-crown"></i> Почему Наполеон изменил мир?</h3>
@@ -491,9 +511,9 @@
         <div class="container">
             <h2>Шедевры военного искусства</h2>
             <div class="grid-3">
-                <div class="card"><div class="card-img"><img src="assets/austerlitz.svg" alt="Картина битвы при Аустерлице" loading="lazy" decoding="async"></div><div class="card-content"><h3>Аустерлиц (1805)</h3><p>«Битва трёх императоров» — гениальная засада, разгром русско-австрийской армии. Франция стала гегемоном Европы.</p></div></div>
-                <div class="card"><div class="card-img"><img src="assets/jena.svg" alt="Битва при Йене" loading="lazy" decoding="async"></div><div class="card-content"><h3>Йена–Ауэрштедт (1806)</h3><p>Молниеносный разгром Пруссии за один день. Вступление в Берлин, конец Священной Римской империи.</p></div></div>
-                <div class="card"><div class="card-img"><img src="assets/wagram.svg" alt="Битва при Ваграме" loading="lazy" decoding="async"></div><div class="card-content"><h3>Ваграм (1809)</h3><p>Кровавое сражение против Австрии, приведшее к браку Наполеона с Марией-Луизой и пику империи.</p></div></div>
+                <div class="card"><div class="card-img"><img src="assets/austerlitz.svg" alt="Картина битвы при Аустерлице" loading="lazy" decoding="async" width="800" height="600"></div><div class="card-content"><h3>Аустерлиц (1805)</h3><p>«Битва трёх императоров» — гениальная засада, разгром русско-австрийской армии. Франция стала гегемоном Европы.</p></div></div>
+                <div class="card"><div class="card-img"><img src="assets/jena.svg" alt="Битва при Йене" loading="lazy" decoding="async" width="800" height="600"></div><div class="card-content"><h3>Йена–Ауэрштедт (1806)</h3><p>Молниеносный разгром Пруссии за один день. Вступление в Берлин, конец Священной Римской империи.</p></div></div>
+                <div class="card"><div class="card-img"><img src="assets/wagram.svg" alt="Битва при Ваграме" loading="lazy" decoding="async" width="800" height="600"></div><div class="card-content"><h3>Ваграм (1809)</h3><p>Кровавое сражение против Австрии, приведшее к браку Наполеона с Марией-Луизой и пику империи.</p></div></div>
             </div>
             <div class="info-block">
                 <h3><i class="fas fa-book-open"></i> Военные инновации и тактика</h3>

@@ -1,27 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
   <title>Йена-Ауэрштедт</title>
-  <desc>Декоративный постер с флагами и силуэтами кавалерии.</desc>
+  <desc>Иллюстрация с линией прусских знамён и французской атакой в серо-синей палитре.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#20262e"/>
-      <stop offset="58%" stop-color="#42505b"/>
-      <stop offset="100%" stop-color="#c09b5a"/>
+    <linearGradient id="j-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1b232f"/>
+      <stop offset="50%" stop-color="#53616f"/>
+      <stop offset="100%" stop-color="#d0ab67"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="600" fill="url(#bg)"/>
-  <path d="M0 462 C175 392 314 492 439 430 S620 342 800 426 L800 600 L0 600 Z" fill="#141414" opacity="0.92"/>
-  <g stroke="#eadfc8" stroke-width="14" stroke-linecap="round">
-    <path d="M205 234 v155"/>
-    <path d="M382 201 v164"/>
-    <path d="M550 236 v152"/>
+  <rect width="800" height="600" fill="url(#j-bg)"/>
+  <path d="M0 440c143-75 254-18 392-46 119-24 168-108 280-99 49 4 86 20 128 47V600H0Z" fill="#151515" opacity=".93"/>
+  <g fill="#f6ead7" font-family="Georgia, serif" text-anchor="middle">
+    <text x="400" y="108" font-size="54" font-weight="700">ЙЕНА-АУЭРШТЕДТ</text>
+    <text x="400" y="149" font-size="22" letter-spacing="4">1806 • РАЗГРОМ ПРУССИИ</text>
   </g>
-  <g fill="#ba3030">
-    <path d="M205 234 h120 l-24 55 24 55 H205z"/>
-    <path d="M382 201 h130 l-26 60 26 60 H382z"/>
-    <path d="M550 236 h110 l-22 50 22 50 H550z"/>
+  <g transform="translate(156 202)">
+    <g stroke="#eadfc8" stroke-width="12" stroke-linecap="round">
+      <path d="M40 0v188"/>
+      <path d="M218 -26v213"/>
+      <path d="M392 3v184"/>
+    </g>
+    <g fill="#b52e31">
+      <path d="M40 0h134l-27 58 27 58H40Z"/>
+      <path d="M218 -26h146l-29 65 29 65H218Z"/>
+      <path d="M392 3h122l-24 52 24 52H392Z"/>
+    </g>
   </g>
-  <g fill="#f8edd9" font-family="Georgia, serif" text-anchor="middle">
-    <text x="400" y="110" font-size="58" font-weight="700">ЙЕНА-АУЭРШТЕДТ</text>
-    <text x="400" y="154" font-size="24" letter-spacing="4">1806 • МОЛНИЕНОСНАЯ ПОБЕДА</text>
+  <g fill="#1c1714">
+    <path d="M150 440c53-65 112-99 193-99 64 0 120 20 174 63-114 16-236 25-367 36Z"/>
+    <path d="M402 434c42-49 94-74 157-74 55 0 101 17 145 52-96 16-201 24-302 22Z"/>
+  </g>
+  <g stroke="#efe6d6" stroke-width="9" stroke-linecap="round">
+    <path d="M216 379l30-89"/>
+    <path d="M307 391l34-96"/>
+    <path d="M529 386l29-79"/>
   </g>
 </svg>

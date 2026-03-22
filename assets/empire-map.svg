@@ -1,14 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
   <title>Карта Французской империи</title>
-  <desc>Схематичная карта влияния Французской империи в Европе.</desc>
-  <rect width="800" height="600" fill="#efe5d4"/>
-  <path d="M160 180 C205 110 304 92 374 121 C444 151 462 121 512 143 C571 169 626 251 635 317 C645 389 603 442 524 463 C472 476 429 459 376 480 C307 509 203 481 160 430 C117 378 113 254 160 180 Z" fill="#c8a061" stroke="#8a6632" stroke-width="8"/>
-  <path d="M240 232 C273 203 332 193 370 219 C410 246 432 237 472 247 C524 259 562 315 547 358 C529 411 464 430 411 422 C364 416 346 437 289 425 C230 413 198 371 194 320 C191 282 206 258 240 232 Z" fill="#7c4d2d" opacity="0.72"/>
-  <g fill="#5b4128" font-family="Georgia, serif">
-    <text x="400" y="88" font-size="54" font-weight="700" text-anchor="middle">ИМПЕРИЯ 1807</text>
-    <text x="400" y="132" font-size="24" letter-spacing="3" text-anchor="middle">ЕВРОПА ПОД ВЛИЯНИЕМ ФРАНЦИИ</text>
-    <text x="286" y="305" font-size="26">Франция</text>
-    <text x="426" y="272" font-size="24">Рейнский союз</text>
-    <text x="360" y="392" font-size="22">Италия</text>
+  <desc>Схематичная карта Европы с выделением Франции, союзников и ключевых городов империи.</desc>
+  <rect width="800" height="600" fill="#efe3ce"/>
+  <rect x="32" y="32" width="736" height="536" rx="24" fill="#f8f1e5" stroke="#d5bc93" stroke-width="3"/>
+  <g fill="#d8c5a1">
+    <path d="M143 153c76-53 184-81 279-52 91 28 138 22 222 73 77 48 127 124 122 215-4 77-41 131-108 173-75 47-141 44-215 54-104 14-176 12-251-28-92-49-151-151-141-257 9-89 29-129 92-178Z"/>
+  </g>
+  <path d="M246 225c29-20 74-39 126-41 56-2 82 14 124 32 35 16 85 24 111 51 29 31 51 80 36 123-14 42-61 75-102 88-49 15-87 7-141 20-61 15-125 14-171-20-48-35-73-88-63-144 9-49 35-88 80-109Z" fill="#bf9654" stroke="#8a6632" stroke-width="7"/>
+  <path d="M276 247c18-14 52-25 88-28 42-4 70 6 102 18 32 12 74 18 95 42 23 27 39 61 28 93-11 30-41 54-73 64-39 11-72 5-111 16-46 12-95 10-129-16-36-27-51-64-44-101 7-35 20-64 44-88Z" fill="#7f4f2d" opacity=".74"/>
+  <g fill="#64472c" font-family="Georgia, serif">
+    <text x="400" y="92" font-size="50" font-weight="700" text-anchor="middle">ИМПЕРИЯ 1807</text>
+    <text x="400" y="130" font-size="20" letter-spacing="3" text-anchor="middle">ЕВРОПА ПОД ВЛИЯНИЕМ ФРАНЦИИ</text>
+    <text x="280" y="307" font-size="24">Франция</text>
+    <text x="448" y="273" font-size="22">Рейнский союз</text>
+    <text x="363" y="402" font-size="21">Италия</text>
+  </g>
+  <g fill="#8a6632" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="600">
+    <text x="196" y="252">Париж</text>
+    <text x="528" y="226">Берлин</text>
+    <text x="504" y="352">Вена</text>
+    <text x="337" y="444">Милан</text>
+    <text x="590" y="308">Варшава</text>
+  </g>
+  <g fill="#8f2f2d">
+    <circle cx="183" cy="236" r="8"/>
+    <circle cx="510" cy="212" r="8"/>
+    <circle cx="486" cy="338" r="8"/>
+    <circle cx="320" cy="430" r="8"/>
+    <circle cx="573" cy="293" r="8"/>
+  </g>
+  <g stroke="#c2a06e" stroke-width="3" stroke-dasharray="8 8" opacity=".6">
+    <path d="M207 239c62 12 120 29 166 58"/>
+    <path d="M520 219c-20 31-25 60-23 115"/>
   </g>
 </svg>
