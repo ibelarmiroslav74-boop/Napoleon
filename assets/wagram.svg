@@ -1,32 +1,39 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
   <title>Ваграм</title>
-  <desc>Декоративный постер со строем артиллерии и дымом сражения.</desc>
+  <desc>Иллюстрация с батареей французской артиллерии и дымом сражения.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#433126"/>
-      <stop offset="45%" stop-color="#8a603f"/>
-      <stop offset="100%" stop-color="#d6b06c"/>
+    <linearGradient id="w-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4b3327"/>
+      <stop offset="48%" stop-color="#906544"/>
+      <stop offset="100%" stop-color="#e0bb79"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="600" fill="url(#bg)"/>
-  <g fill="#f0e3ca" opacity="0.82">
-    <circle cx="220" cy="230" r="58"/>
-    <circle cx="285" cy="205" r="74"/>
-    <circle cx="360" cy="228" r="61"/>
+  <rect width="800" height="600" fill="url(#w-bg)"/>
+  <g fill="#f2e4c8" opacity=".84">
+    <circle cx="222" cy="220" r="56"/>
+    <circle cx="289" cy="196" r="72"/>
+    <circle cx="360" cy="220" r="58"/>
   </g>
-  <path d="M0 462 C120 421 236 487 354 447 S613 370 800 444 L800 600 L0 600 Z" fill="#2c2019" opacity="0.94"/>
-  <g fill="#16110f">
-    <rect x="170" y="395" width="82" height="34" rx="8"/>
-    <rect x="312" y="382" width="82" height="34" rx="8"/>
-    <rect x="458" y="402" width="82" height="34" rx="8"/>
+  <path d="M0 458c109-38 210 42 336 13 91-21 150-87 255-87 78 0 132 28 209 66V600H0Z" fill="#2e211b" opacity=".96"/>
+  <g fill="#fff0da" font-family="Georgia, serif" text-anchor="middle">
+    <text x="400" y="106" font-size="56" font-weight="700">ВАГРАМ</text>
+    <text x="400" y="147" font-size="24" letter-spacing="4">1809 • ВЕЛИКАЯ БАТАРЕЯ</text>
   </g>
-  <g stroke="#16110f" stroke-width="14" stroke-linecap="round">
-    <path d="M247 412 l80-42"/>
-    <path d="M389 399 l84-46"/>
-    <path d="M535 419 l82-36"/>
+  <g transform="translate(154 344)" fill="#1a1310">
+    <rect x="0" y="62" width="88" height="36" rx="10"/>
+    <rect x="150" y="50" width="88" height="36" rx="10"/>
+    <rect x="300" y="68" width="88" height="36" rx="10"/>
+    <rect x="446" y="54" width="88" height="36" rx="10"/>
   </g>
-  <g fill="#fff1da" font-family="Georgia, serif" text-anchor="middle">
-    <text x="400" y="112" font-size="60" font-weight="700">ВАГРАМ</text>
-    <text x="400" y="156" font-size="26" letter-spacing="4">1809 • АРТИЛЛЕРИЯ • ПИК ИМПЕРИИ</text>
+  <g stroke="#1a1310" stroke-width="15" stroke-linecap="round">
+    <path d="M243 407l95-44"/>
+    <path d="M392 395l102-49"/>
+    <path d="M542 413l103-41"/>
+  </g>
+  <g fill="#d6b27c">
+    <circle cx="218" cy="420" r="17"/>
+    <circle cx="367" cy="408" r="17"/>
+    <circle cx="516" cy="426" r="17"/>
+    <circle cx="663" cy="412" r="17"/>
   </g>
 </svg>

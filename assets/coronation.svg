@@ -1,24 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
   <title>Коронация Наполеона</title>
-  <desc>Декоративная корона и церемониальный постер.</desc>
+  <desc>Торжественная иллюстрация с короной, лавровым венком и интерьером собора.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#2c1f19"/>
-      <stop offset="60%" stop-color="#7b5131"/>
-      <stop offset="100%" stop-color="#d7b36e"/>
+    <linearGradient id="c-bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#2b1e1b"/>
+      <stop offset="48%" stop-color="#6c4730"/>
+      <stop offset="100%" stop-color="#e3c07a"/>
     </linearGradient>
   </defs>
-  <rect width="800" height="600" fill="url(#bg)"/>
-  <g transform="translate(205 170)">
-    <path d="M30 210 h330 l-22 92 h-286z" fill="#dcb86d"/>
-    <path d="M55 210 l45-125 91 84 75-114 88 114 46-84 34 125z" fill="#f4dfad" stroke="#d5a54f" stroke-width="12"/>
-    <circle cx="101" cy="84" r="20" fill="#f8f3ec"/>
-    <circle cx="266" cy="54" r="22" fill="#c14444"/>
-    <circle cx="400" cy="84" r="20" fill="#f8f3ec"/>
-    <rect x="95" y="235" width="196" height="30" rx="15" fill="#8f1f28" opacity="0.82"/>
+  <rect width="800" height="600" fill="url(#c-bg)"/>
+  <path d="M0 180c96 48 181 71 285 71 122 0 197-43 286-43 81 0 152 18 229 44V600H0Z" fill="#4e2d20" opacity=".44"/>
+  <g fill="#fef3df" font-family="Georgia, serif" text-anchor="middle">
+    <text x="400" y="102" font-size="56" font-weight="700">КОРОНАЦИЯ</text>
+    <text x="400" y="144" font-size="24" letter-spacing="4">1804 • НОТР-ДАМ • ИМПЕРИЯ</text>
   </g>
-  <g fill="#fff5e4" font-family="Georgia, serif" text-anchor="middle">
-    <text x="400" y="110" font-size="58" font-weight="700">КОРОНАЦИЯ</text>
-    <text x="400" y="155" font-size="28" letter-spacing="4">1804 • НОТР-ДАМ • ИМПЕРИЯ</text>
+  <g transform="translate(160 165)">
+    <path d="M50 220h380l-27 102H77Z" fill="#d5aa57"/>
+    <path d="M84 220l38-140 96 95 75-134 85 131 88-92 32 140Z" fill="#f2dfa8" stroke="#cf9e49" stroke-width="11"/>
+    <circle cx="122" cy="78" r="19" fill="#f7f1e8"/>
+    <circle cx="294" cy="42" r="23" fill="#b4303c"/>
+    <circle cx="466" cy="78" r="19" fill="#f7f1e8"/>
+    <path d="M176 230h132a18 18 0 0 1 18 18v25H158v-25a18 18 0 0 1 18-18Z" fill="#8f2030"/>
+  </g>
+  <g transform="translate(130 170)" fill="none" stroke="#f5e2bc" stroke-width="8" opacity=".55">
+    <path d="M0 220c74-87 151-126 231-126s157 39 231 126"/>
+    <path d="M31 220c64-61 130-92 200-92 69 0 136 31 200 92"/>
+    <path d="M462 220c16-40 28-81 36-122"/>
+    <path d="M0 220c15-43 27-85 35-126"/>
   </g>
 </svg>
