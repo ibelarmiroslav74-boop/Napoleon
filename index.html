@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Наполеон Бонапарт | Империя, Слава, Наследие</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fefaf5;
+            color: #2c241a;
+            line-height: 1.55;
+            scroll-behavior: smooth;
+        }
+
+        /* Единый стиль — элегантная классика с золотыми акцентами */
+        h1, h2, h3, h4, .logo, .nav-links a, .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: 4.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: #c6a15b;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 1rem 0 0.8rem;
+            color: #3e2c1c;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* Navigation — имперский минимализм */
+        .navbar {
+            background: rgba(30, 25, 21, 0.78);
+            padding: 0.7rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(198, 161, 91, 0.65);
+            backdrop-filter: blur(14px) saturate(140%);
+            -webkit-backdrop-filter: blur(14px) saturate(140%);
+            box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.65);
+            transition:
+                padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                background 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+        .navbar.nav-collapsed {
+            padding-top: 0.55rem;
+            padding-bottom: 0.55rem;
+            box-shadow: 0 12px 34px -18px rgba(0, 0, 0, 0.8);
+        }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #e9cf9e;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            color: #f4e5c7;
+            font-weight: 400;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+            transform-origin: top center;
+            transition:
+                opacity 0.45s ease,
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                margin-top 0.45s ease,
+                filter 0.45s ease;
+            max-height: 120px;
+            opacity: 1;
+            transform: translateY(0) scaleY(1);
+            filter: blur(0);
+            overflow: hidden;
+        }
+        .navbar.nav-collapsed .nav-links {
+            opacity: 0;
+            transform: translateY(-18px) scaleY(0.82);
+            max-height: 0;
+            margin-top: -0.3rem;
+            pointer-events: none;
+            filter: blur(8px);
+        }
+        .nav-links a {
+            color: #f0e5d8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: 0.2s;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active-nav {
+            color: #e9cf9e;
+            border-bottom-color: #c6a15b;
+        }
+
+        /* Hero unit — единая стилистика */
+        .hero {
+            background: linear-gradient(135deg, rgba(20,15,10,0.75) 0%, rgba(30,20,12,0.8) 100%), url('https://images.unsplash.com/photo-1586500036706-41963de24c8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            min-height: 82vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            border-radius: 0 0 48px 48px;
+            margin-bottom: 2rem;
+        }
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 5rem;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.6);
+        }
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-style: italic;
+            margin: 1rem 0 2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        .btn {
+            display: inline-block;
+            background: #c6a15b;
+            color: #1e1915;
+            padding: 0.9rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.25s;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.5px;
+            border: 1px solid transparent;
+        }
+        .btn:hover {
+            background: #dbb87a;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px -8px rgba(0,0,0,0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #c6a15b;
+            color: #e9cf9e;
+        }
+        .btn-outline:hover {
+            background: #c6a15b;
+            color: #1e1915;
+        }
+
+        /* Карточки в едином стиле */
+        .grid-3, .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #efe2d0;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 36px -12px rgba(0,0,0,0.15);
+            border-color: #dbb87a;
+        }
+        .card-img {
+            height: 210px;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-content {
+            padding: 1.6rem;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Timeline улучшенная */
+        .timeline {
+            position: relative;
+            max-width: 1100px;
+            margin: 2rem auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: #c6a15b;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            padding: 1rem 2rem;
+            position: relative;
+            width: 50%;
+        }
+        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; }
+        .timeline-content {
+            background: white;
+            padding: 1.2rem 1.8rem;
+            border-radius: 28px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            border-left: 4px solid #c6a15b;
+        }
+        .timeline-content h3 { color: #aa7e44; margin-bottom: 0.4rem;}
+        .timeline-item::before {
+            content: "⚜️";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #2c241a;
+            border: 2px solid #c6a15b;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-size: 1.2rem;
+            top: 20px;
+            z-index: 2;
+            background-color: #1e1915;
+        }
+        .timeline-item:nth-child(odd)::before { right: -20px; }
+        .timeline-item:nth-child(even)::before { left: -20px; }
+        @media (max-width: 768px) {
+            .timeline::after { left: 32px; }
+            .timeline-item { width: 100%; padding-left: 70px; text-align: left; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::before { left: 12px; right: auto; }
+        }
+
+        /* Блоки информации */
+        .info-block {
+            background: #f7f0e7;
+            padding: 2rem;
+            border-radius: 32px;
+            margin: 2rem 0;
+            border-left: 8px solid #c6a15b;
+        }
+        .stat-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: white;
+            flex: 1;
+            min-width: 180px;
+            padding: 1.4rem;
+            text-align: center;
+            border-radius: 28px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #c6a15b;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .quote-elegant {
+            background: #e7dccf;
+            padding: 3rem;
+            border-radius: 48px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            margin: 2rem 0;
+        }
+
+        footer {
+            background: #1e1915;
+            color: #cbc1b2;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #c6a15b;
+        }
+
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(18px);
+        }
+        .active-page {
+            display: block;
+            animation: pageReveal 0.7s ease-out forwards;
+        }
+        .reveal-item {
+            opacity: 0;
+            transform: translate3d(0, 34px, 0) scale(0.98);
+            filter: blur(14px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.7s ease;
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform, filter;
+        }
+        .reveal-item.reveal-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+            filter: blur(0);
+        }
+        .hero-content .reveal-item {
+            transform: translate3d(0, 42px, 0) scale(0.97);
+        }
+        .timeline-item.reveal-item:nth-child(odd) {
+            transform: translate3d(-34px, 34px, 0) scale(0.98);
+        }
+        .timeline-item.reveal-item:nth-child(even) {
+            transform: translate3d(34px, 34px, 0) scale(0.98);
+        }
+        .timeline-item.reveal-item.reveal-visible,
+        .hero-content .reveal-item.reveal-visible {
+            transform: translate3d(0, 0, 0) scale(1);
+        }
+        @keyframes pageReveal {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto;
+            }
+            .navbar,
+            .nav-links,
+            .page,
+            .active-page,
+            .reveal-item,
+            .reveal-item.reveal-visible {
+                animation: none !important;
+                transition: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .container { padding: 0 1.5rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .nav-container { flex-direction: column; gap: 0.6rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .navbar.nav-collapsed .nav-links {
+                margin-top: -0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">Наполеон <span>Бонапарт</span></a>
+        <ul class="nav-links">
+            <li><a href="#" data-page="home" class="nav-link active-nav">Главная</a></li>
+            <li><a href="#" data-page="biography" class="nav-link">Биография</a></li>
+            <li><a href="#" data-page="campaigns" class="nav-link">Кампании</a></li>
+            <li><a href="#" data-page="legacy" class="nav-link">Наследие</a></li>
+            <li><a href="#" data-page="gallery" class="nav-link">Мудрость & Цитаты</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- ГЛАВНАЯ — расширенная информация -->
+    <div id="home-page" class="page active-page">
+        <div class="hero">
+            <div class="hero-content">
+                <h1>«Честь подобна краеугольному камню»</h1>
+                <div class="hero-subtitle">Император французов, законодатель Европы, гений войны и мира</div>
+                <a href="#" class="btn" data-page="biography">Исследовать эпоху <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="stat-grid">
+                <div class="stat-card"><div class="stat-number">60+</div><div>Выигранных сражений</div></div>
+                <div class="stat-card"><div class="stat-number">7</div><div>антифранцузских коалиций</div></div>
+                <div class="stat-card"><div class="stat-number">1812</div><div>кульминация Империи</div></div>
+                <div class="stat-card"><div class="stat-number">40</div><div>стран приняли Кодекс</div></div>
+            </div>
+            <div class="grid-3">
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div><div class="card-content"><h3>Стратег-новатор</h3><p>Корпусная система, массовая мобилизация, централизация артиллерии — его тактика изучается в академиях до сих пор.</p></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div><div class="card-content"><h3>Государственный гений</h3><p>Банк Франции, светское образование, префекты департаментов — заложил основы современной Франции.</p></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.pexels.com/photos/236952/pexels-photo-236952.jpeg?auto=compress&cs=tinysrgb&w=800');"></div><div class="card-content"><h3>Европейская трансформация</h3><p>От Испании до Польши — отмена крепостного права, введение гражданских свобод под влиянием Франции.</p></div></div>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-crown"></i> Почему Наполеон изменил мир?</h3>
+                <p>Он завершил Великую французскую революцию, создав стабильное правовое поле. Его Гражданский кодекс стал основой для многих государств. Наполеон способствовал подъёму национализма и одновременно распространил идеи равенства перед законом. За 15 лет его правления Франция превратилась в культурный и политический центр континента.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- БИОГРАФИЯ — максимально информативно, расширенная хронология -->
+    <div id="biography-page" class="page">
+        <div class="container">
+            <h2>Жизнь, достойная эпопеи</h2>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-content"><h3>1769 — Корсиканское детство</h3><p>15 августа в Аяччо. Семья Буонапарте принадлежала к мелкому дворянству. С ранних лет проявлял лидерские качества.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1784-1785 — Военное образование</h3><p>Парижская военная школа, выпуск в 16 лет в звании младшего лейтенанта артиллерии.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1793 — Триумф в Тулоне</h3><p>Освобождение Тулона от роялистов и англичан. Генерал в 24 года.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1796-97 — Итальянская кампания</h3><p>Разгром австрийцев, создание Цизальпинской республики. Первая слава национального героя.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1798-1799 — Египетский поход</h3><p>Научная экспедиция, открытие Розеттского камня, но военный провал из-за британского флота.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1799 — Переворот 18 брюмера</h3><p>Установление консульства, фактическая единоличная власть.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1804 — Император французов</h3><p>Коронация в соборе Парижской Богоматери с участием Папы Римского.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1812 — Русская кампания</h3><p>Вторжение в Россию, взятие Москвы и гибель Великой армии от холода и голода.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1814 — Отречение и Эльба</h3><p>Поражение в Шестидневной войне, ссылка на остров Эльба.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1815 — Сто дней и Ватерлоо</h3><p>Возвращение, окончательное поражение 18 июня, ссылка на остров Святой Елены.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><h3>1821 — Закат императора</h3><p>5 мая умирает в Лонгвуде, его прах возвращён во Францию в 1840 году.</p></div></div>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-chart-simple"></i> Интересные факты о личности</h3>
+                <p>Наполеон писал романы в молодости, спал всего 4 часа в сутки, обладал феноменальной памятью. Диктовал одновременно до 6 писем разным секретарям. Страстно любил литературу и вёл переписку с Гёте. Его рост составлял около 168–169 см — среднестатистический для француза той эпохи.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ВОЕННЫЕ КАМПАНИИ — углублённо -->
+    <div id="campaigns-page" class="page">
+        <div class="container">
+            <h2>Шедевры военного искусства</h2>
+            <div class="grid-3">
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1560252823-bd6b1b1b6b3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div><div class="card-content"><h3>Аустерлиц (1805)</h3><p>«Битва трёх императоров» — гениальная засада, разгром русско-австрийской армии. Франция стала гегемоном Европы.</p></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1580674684081-7617fbf3d745?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div><div class="card-content"><h3>Йена–Ауэрштедт (1806)</h3><p>Молниеносный разгром Пруссии за один день. Вступление в Берлин, конец Священной Римской империи.</p></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.pexels.com/photos/241544/pexels-photo-241544.jpeg?auto=compress&cs=tinysrgb&w=800');"></div><div class="card-content"><h3>Ваграм (1809)</h3><p>Кровавое сражение против Австрии, приведшее к браку Наполеона с Марией-Луизой и пику империи.</p></div></div>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-book-open"></i> Военные инновации и тактика</h3>
+                <p>Наполеон усовершенствовал корпусную систему, что позволяло частям действовать автономно, но быстро собираться для генерального сражения. Массированное применение артиллерии, активная разведка и глубокая колонная тактика пехоты. Его «Великая армия» считалась лучшей в истории до 1812 года. Даже в кампании 1814 года он одерживал победы, имея втрое меньше солдат.</p>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card"><span class="stat-number">50+</span><br>генеральных сражений</div>
+                <div class="stat-card"><span class="stat-number">4</span><br>коалиции разгромлены</div>
+                <div class="stat-card"><span class="stat-number">600 000</span><br>пик численности армии (1812)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- НАСЛЕДИЕ — реформы, влияние на мир -->
+    <div id="legacy-page" class="page">
+        <div class="container">
+            <h2>Реформы, пережившие империю</h2>
+            <div class="grid-3">
+                <div class="card"><div class="card-content"><i class="fas fa-gavel" style="font-size: 2.2rem; color:#c6a15b;"></i><h3>Code Civil (1804)</h3><p>Закрепил свободу личности, равенство перед законом, светский брак и право собственности. Влияет на законодательство Франции, Италии, Нидерландов, Румынии, многих штатов США (Луизиана).</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-university" style="font-size: 2.2rem; color:#c6a15b;"></i><h3>Образование и наука</h3><p>Создание лицеев, Высшей нормальной школы, Французского института. Поддержка учёных: при нём сделаны важные открытия в математике и химии.</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-landmark" style="font-size: 2.2rem; color:#c6a15b;"></i><h3>Государственное управление</h3><p>Префекты департаментов, Банк Франции, налоговая система. Создание устойчивой бюрократии, которая действует поныне.</p></div></div>
+            </div>
+            <div class="quote-elegant">
+                <i class="fas fa-quote-left"></i> Моя настоящая слава — не сорок выигранных сражений: Ватерлоо сотрёт память о них. Но то, что ничто не сотрёт и что будет жить вечно — это мой Гражданский кодекс. <i class="fas fa-quote-right"></i>
+                <div style="margin-top: 1rem; font-size: 1rem;">— Наполеон Бонапарт, ссылка на о. Св. Елены</div>
+            </div>
+            <div class="info-block">
+                <h3><i class="fas fa-globe"></i> Геополитическое влияние</h3>
+                <p>Наполеоновские войны разбудили национальное самосознание в Германии, Италии, Польше. Продажа Луизианы США удвоила их территорию. Введение Кодекса Наполеона в завоёванных странах ликвидировало феодальные пережитки и подготовило почву для либеральных революций XIX века. Современная Европа во многом обязана ему административным границам и правовым системам.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ГАЛЕРЕЯ И ЦИТАТЫ — расширенная философия -->
+    <div id="gallery-page" class="page">
+        <div class="container">
+            <h2>Мысли императора, вдохновляющие столетия</h2>
+            <div class="grid-3" style="margin-bottom: 2rem;">
+                <div class="card"><div class="card-content"><i class="fas fa-quote-right fa-2x" style="color:#c6a15b;"></i><p style="margin-top:1rem; font-weight:500;">«Невозможное — это слово из словаря глупцов».</p><p style="font-style:italic;">— источник: письма с Эльбы</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-quote-right fa-2x" style="color:#c6a15b;"></i><p style="margin-top:1rem; font-weight:500;">«Честолюбие никогда не бывает спокойным, даже удовлетворённое, оно никогда не насыщается».</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-quote-right fa-2x" style="color:#c6a15b;"></i><p style="margin-top:1rem; font-weight:500;">«Гораздо больше величия в умении прощать, чем в мести».</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-quote-right fa-2x" style="color:#c6a15b;"></i><p style="margin-top:1rem; font-weight:500;">«Правда — это то, что нужно народу, но не всегда то, что он хочет слышать».</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-quote-right fa-2x" style="color:#c6a15b;"></i><p style="margin-top:1rem; font-weight:500;">«В каждой французской душе есть частица величия».</p></div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-quote-right fa-2x" style="color:#c6a15b;"></i><p style="margin-top:1rem; font-weight:500;">«С военными талантами можно выиграть битву, но только с моральной силой можно завоевать мир».</p></div></div>
+            </div>
+            <div style="background: #efe4d7; border-radius: 40px; padding: 2rem; text-align: center;">
+                <h3><i class="fas fa-flag-checkered"></i> Символы и наследие в искусстве</h3>
+                <p style="margin-top: 0.8rem;">Наполеон стал героем произведений Бальзака, Толстого, Стендаля. Его образ запечатлён на сотнях полотен Давида, Гро, Делакруа. Двууголка, серый сюртук и рука, заложенная за жилет, — иконический образ власти. В 2021 году отмечалось 200-летие его смерти, и Франция вновь дискутировала о его двойственном наследии: диктатор и реформатор.</p>
+                <div style="display: flex; justify-content: center; gap: 1.8rem; flex-wrap: wrap; margin-top: 1.6rem;">
+                    <span><i class="fas fa-crown"></i> Коронационная мантия</span>
+                    <span><i class="fas fa-chess-queen"></i> Шахматный стратег</span>
+                    <span><i class="fas fa-balance-scale"></i> Кодекс Наполеона</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2025 — Наполеон Бонапарт: величие и реформы. Зайцев Мирослав. Историческая реконструкция.</p>
+    <p style="margin-top: 0.6rem; font-size:0.85rem; letter-spacing: 0.5px;"><i class="fas fa-eagle"></i> «Франция, армия, Жозефина...» — последние слова императора.</p>
+</footer>
+
+<script>
+    const navbar = document.querySelector('.navbar');
+    const pagesMap = {
+        home: document.getElementById('home-page'),
+        biography: document.getElementById('biography-page'),
+        campaigns: document.getElementById('campaigns-page'),
+        legacy: document.getElementById('legacy-page'),
+        gallery: document.getElementById('gallery-page')
+    };
+    const navItems = document.querySelectorAll('.nav-link');
+    const revealSelectors = [
+        '.hero-content > *',
+        '.container > h2',
+        '.container > .timeline',
+        '.container > .info-block',
+        '.container > .quote-elegant',
+        '.container > .stat-grid',
+        '.container > .grid-3',
+        '.container > div[style*="background: #efe4d7"]',
+        '.stat-card',
+        '.card',
+        '.timeline-item',
+        '.info-block',
+        '.quote-elegant',
+        '.container > p',
+        '.container > div[style*="display: flex"] > span'
+    ];
+    let lastScrollY = window.scrollY;
+    let navCollapsed = false;
+    const scrollThreshold = 18;
+    const topRevealOffset = 110;
+
+    function setNavCollapsed(collapsed) {
+        if (navCollapsed === collapsed) {
+            return;
+        }
+
+        navCollapsed = collapsed;
+        navbar.classList.toggle('nav-collapsed', collapsed);
+    }
+
+    function handleNavOnScroll() {
+        const currentScrollY = window.scrollY;
+        const delta = currentScrollY - lastScrollY;
+
+        if (currentScrollY <= topRevealOffset) {
+            setNavCollapsed(false);
+        } else if (delta > scrollThreshold) {
+            setNavCollapsed(true);
+        } else if (delta < -scrollThreshold) {
+            setNavCollapsed(false);
+        }
+
+        lastScrollY = currentScrollY;
+    }
+
+    function getRevealItems(page) {
+        return Array.from(page.querySelectorAll(revealSelectors.join(', ')));
+    }
+
+    function prepareRevealItems() {
+        Object.values(pagesMap).forEach(page => {
+            const uniqueItems = [...new Set(getRevealItems(page))];
+            uniqueItems.forEach((item, index) => {
+                item.classList.add('reveal-item');
+                item.style.setProperty('--reveal-delay', `${Math.min(index * 80, 720)}ms`);
+            });
+        });
+    }
+
+    function animatePageContent(page) {
+        const uniqueItems = [...new Set(getRevealItems(page))];
+        uniqueItems.forEach(item => item.classList.remove('reveal-visible'));
+        requestAnimationFrame(() => {
+            uniqueItems.forEach(item => item.classList.add('reveal-visible'));
+        });
+    }
+    
+    function setActivePage(pageId) {
+        Object.values(pagesMap).forEach(p => p.classList.remove('active-page'));
+        if(pagesMap[pageId]) {
+            pagesMap[pageId].classList.add('active-page');
+            animatePageContent(pagesMap[pageId]);
+        }
+        navItems.forEach(link => {
+            const val = link.getAttribute('data-page');
+            if(val === pageId) link.classList.add('active-nav');
+            else link.classList.remove('active-nav');
+        });
+        setNavCollapsed(false);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    navItems.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            if(page && pagesMap[page]) {
+                setActivePage(page);
+                window.location.hash = page;
+            }
+        });
+    });
+    
+    document.querySelectorAll('[data-page]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = btn.getAttribute('data-page');
+            if(target && pagesMap[target]) {
+                e.preventDefault();
+                setActivePage(target);
+                window.location.hash = target;
+            }
+        });
+    });
+    
+    function hashChange() {
+        let hash = window.location.hash.slice(1);
+        if(hash && pagesMap[hash]) setActivePage(hash);
+        else setActivePage('home');
+    }
+    prepareRevealItems();
+    window.addEventListener('scroll', handleNavOnScroll, { passive: true });
+    window.addEventListener('hashchange', hashChange);
+    hashChange();
+    handleNavOnScroll();
+</script>
+</body>
+</html>
