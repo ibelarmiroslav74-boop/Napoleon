@@ -258,59 +258,134 @@
             font-size: 1.5rem;
         }
 
-        /* Timeline улучшенная */
+        /* Биография — упрощённая композиция */
+        .biography-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1.8fr) minmax(260px, 0.9fr);
+            gap: 1.5rem;
+            align-items: stretch;
+            margin: 2.5rem 0 2rem;
+        }
+        .biography-lead,
+        .biography-highlight,
+        .timeline-item {
+            background: white;
+            border: 1px solid #efe2d0;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px -12px rgba(0,0,0,0.08);
+        }
+        .biography-lead {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(247,240,231,0.92));
+        }
+        .biography-lead p {
+            max-width: 52rem;
+            color: #4d3d2e;
+        }
+        .biography-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.4rem;
+        }
+        .biography-meta span {
+            padding: 0.7rem 1rem;
+            border-radius: 999px;
+            background: rgba(198, 161, 91, 0.12);
+            border: 1px solid rgba(198, 161, 91, 0.28);
+            color: #6c5330;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .biography-highlight {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #f7f0e7;
+        }
+        .biography-highlight .stat-number {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        .biography-highlight p {
+            color: #5d4a37;
+        }
         .timeline {
             position: relative;
-            max-width: 1100px;
-            margin: 2rem auto;
+            max-width: 980px;
+            margin: 0 auto 2rem;
+            padding-left: 2rem;
+            display: grid;
+            gap: 1rem;
         }
-        .timeline::after {
+        .timeline::before {
             content: '';
             position: absolute;
-            width: 3px;
-            background: #c6a15b;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 0.5rem;
+            bottom: 0.5rem;
+            left: 0.55rem;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(198, 161, 91, 0.15), #c6a15b 18%, rgba(198, 161, 91, 0.15));
         }
         .timeline-item {
-            padding: 1rem 2rem;
             position: relative;
-            width: 50%;
+            padding: 1.3rem 1.5rem 1.3rem 1.7rem;
+            margin-left: 1rem;
         }
-        .timeline-item:nth-child(odd) { left: 0; text-align: right; }
-        .timeline-item:nth-child(even) { left: 50%; }
-        .timeline-content {
-            background: white;
-            padding: 1.2rem 1.8rem;
-            border-radius: 28px;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
-            border-left: 4px solid #c6a15b;
-        }
-        .timeline-content h3 { color: #aa7e44; margin-bottom: 0.4rem;}
         .timeline-item::before {
-            content: "⚜️";
+            content: '';
             position: absolute;
-            width: 40px;
-            height: 40px;
-            background: #2c241a;
-            border: 2px solid #c6a15b;
+            top: 1.5rem;
+            left: -1.55rem;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
-            text-align: center;
-            line-height: 36px;
-            font-size: 1.2rem;
-            top: 20px;
-            z-index: 2;
-            background-color: #1e1915;
+            background: #c6a15b;
+            border: 4px solid #fefaf5;
+            box-shadow: 0 0 0 1px rgba(198, 161, 91, 0.35);
         }
-        .timeline-item:nth-child(odd)::before { right: -20px; }
-        .timeline-item:nth-child(even)::before { left: -20px; }
+        .timeline-content {
+            display: grid;
+            gap: 0.45rem;
+        }
+        .timeline-year {
+            display: inline-flex;
+            align-self: start;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(198, 161, 91, 0.14);
+            color: #8d6733;
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .timeline-content h3 {
+            color: #3e2c1c;
+            margin: 0;
+            font-size: 1.3rem;
+        }
+        .timeline-content p {
+            color: #5a4734;
+        }
+        @media (max-width: 900px) {
+            .biography-intro {
+                grid-template-columns: 1fr;
+            }
+        }
         @media (max-width: 768px) {
-            .timeline::after { left: 32px; }
-            .timeline-item { width: 100%; padding-left: 70px; text-align: left; }
-            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; }
-            .timeline-item::before { left: 12px; right: auto; }
+            .timeline {
+                padding-left: 1.6rem;
+            }
+            .timeline-item {
+                margin-left: 0.6rem;
+                padding: 1.2rem 1.2rem 1.2rem 1.4rem;
+            }
+            .timeline-item::before {
+                left: -1.25rem;
+            }
         }
 
         /* Блоки информации */
@@ -391,11 +466,8 @@
         .hero-content .reveal-item {
             transform: translate3d(0, 42px, 0) scale(0.97);
         }
-        .timeline-item.reveal-item:nth-child(odd) {
-            transform: translate3d(-34px, 34px, 0) scale(0.98);
-        }
-        .timeline-item.reveal-item:nth-child(even) {
-            transform: translate3d(34px, 34px, 0) scale(0.98);
+        .timeline-item.reveal-item {
+            transform: translate3d(0, 34px, 0) scale(0.98);
         }
         .timeline-item.reveal-item.reveal-visible,
         .hero-content .reveal-item.reveal-visible {
@@ -482,26 +554,41 @@
         </div>
     </div>
 
-    <!-- БИОГРАФИЯ — максимально информативно, расширенная хронология -->
+    <!-- БИОГРАФИЯ — упрощённая композиция с тем же имперским характером -->
     <div id="biography-page" class="page">
         <div class="container">
             <h2>Жизнь, достойная эпопеи</h2>
+            <div class="biography-intro">
+                <div class="biography-lead">
+                    <h3>От корсиканского офицера до архитектора новой Европы</h3>
+                    <p>Биография Наполеона теперь читается проще: без перегруженной шахматной композиции, но с тем же ощущением масштаба. Это путь человека, который за одно поколение прошёл путь от артиллерийского лейтенанта до императора, реформатора и символа эпохи.</p>
+                    <div class="biography-meta">
+                        <span>1769 — рождение в Аяччо</span>
+                        <span>1804 — коронация</span>
+                        <span>1815 — Ватерлоо</span>
+                        <span>1821 — смерть на Св. Елене</span>
+                    </div>
+                </div>
+                <div class="biography-highlight">
+                    <div class="stat-number">52</div>
+                    <h3>Года жизни, изменившие континент</h3>
+                    <p>Краткий ритм биографии помогает быстро увидеть главное: становление, триумф, имперский пик и драматичный финал.</p>
+                </div>
+            </div>
             <div class="timeline">
-                <div class="timeline-item"><div class="timeline-content"><h3>1769 — Корсиканское детство</h3><p>15 августа в Аяччо. Семья Буонапарте принадлежала к мелкому дворянству. С ранних лет проявлял лидерские качества.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1784-1785 — Военное образование</h3><p>Парижская военная школа, выпуск в 16 лет в звании младшего лейтенанта артиллерии.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1793 — Триумф в Тулоне</h3><p>Освобождение Тулона от роялистов и англичан. Генерал в 24 года.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1796-97 — Итальянская кампания</h3><p>Разгром австрийцев, создание Цизальпинской республики. Первая слава национального героя.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1798-1799 — Египетский поход</h3><p>Научная экспедиция, открытие Розеттского камня, но военный провал из-за британского флота.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1799 — Переворот 18 брюмера</h3><p>Установление консульства, фактическая единоличная власть.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1804 — Император французов</h3><p>Коронация в соборе Парижской Богоматери с участием Папы Римского.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1812 — Русская кампания</h3><p>Вторжение в Россию, взятие Москвы и гибель Великой армии от холода и голода.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1814 — Отречение и Эльба</h3><p>Поражение в Шестидневной войне, ссылка на остров Эльба.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1815 — Сто дней и Ватерлоо</h3><p>Возвращение, окончательное поражение 18 июня, ссылка на остров Святой Елены.</p></div></div>
-                <div class="timeline-item"><div class="timeline-content"><h3>1821 — Закат императора</h3><p>5 мая умирает в Лонгвуде, его прах возвращён во Францию в 1840 году.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1769</span><h3>Корсиканское детство</h3><p>15 августа в Аяччо родился Наполеон Буонапарте — будущий правитель, выросший в семье мелкого дворянства.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1784–1785</span><h3>Военное образование</h3><p>Парижская военная школа дала ему строгую дисциплину и быстрый старт: офицерский чин он получил уже в шестнадцать лет.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1793</span><h3>Тулон и ранняя слава</h3><p>Успех при Тулоне превратил молодого артиллериста в генерала и открыл дорогу к большой политике.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1796–1799</span><h3>Кампании, создавшие легенду</h3><p>Итальянская и Египетская экспедиции закрепили за ним образ стратега, соединяющего амбицию, науку и риск.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1799</span><h3>18 брюмера</h3><p>Переворот положил конец Директории: Наполеон стал первым консулом и сосредоточил власть в своих руках.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1804–1809</span><h3>Имперский подъём</h3><p>Коронация, победы и реформы сделали Францию центром Европы, а имя Наполеона — мерой государственной воли.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1812</span><h3>Русская кампания</h3><p>Поход на Россию стал точкой перелома: после взятия Москвы Великая армия начала разрушаться вместе с мифом о непобедимости.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1814–1815</span><h3>Эльба, Сто дней, Ватерлоо</h3><p>После отречения последовало короткое возвращение и окончательное поражение, завершившее эпоху наполеоновских войн.</p></div></div>
+                <div class="timeline-item"><div class="timeline-content"><span class="timeline-year">1821</span><h3>Последние годы и посмертная легенда</h3><p>На Святой Елене он превратился из свергнутого императора в миф — фигуру, к которой Европа продолжает возвращаться.</p></div></div>
             </div>
             <div class="info-block">
                 <h3><i class="fas fa-chart-simple"></i> Интересные факты о личности</h3>
-                <p>Наполеон писал романы в молодости, спал всего 4 часа в сутки, обладал феноменальной памятью. Диктовал одновременно до 6 писем разным секретарям. Страстно любил литературу и вёл переписку с Гёте. Его рост составлял около 168–169 см — среднестатистический для француза той эпохи.</p>
+                <p>Наполеон писал художественные тексты в молодости, спал очень мало и обладал редкой памятью. Он мог диктовать несколько писем почти одновременно, увлекался литературой и любил выстраивать вокруг себя атмосферу театра власти. Даже после поражения его образ остался частью европейской культурной памяти.</p>
             </div>
         </div>
     </div>
